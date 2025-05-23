@@ -60,7 +60,11 @@ nav button:hover {
     border-color: black;
 }
 
-.tokIgre button {
+#tokIgre{
+    margin-top: 25px;
+}
+
+#tokIgre button {
     padding: 10px;
     background-color: #707070;
     color: white;
@@ -70,14 +74,21 @@ nav button:hover {
     font-size: 20px;
     font-weight: bold;
     box-sizing: border-box;
-    margin: auto;
     width: 200px;
     height: 45px;
 }
 
-.tokIgre button:hover {
+#tokIgre button:hover {
     background-color: black;
     transform: translateY(-2px);
+}
+
+#btnReset{
+    float: left;
+}
+
+#btnNovaIgra{
+    float: right;
 }
 
 /*#krajIgreOkvir {
