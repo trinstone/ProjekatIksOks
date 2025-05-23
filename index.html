@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
         <div class="modIgre">
@@ -28,5 +29,15 @@
             <button id="btnReset">Restartuj igru</button>
             <button id="btnNovaIgra">Nova igra</button>
         </div>
+        <script type="module">
+        import { initPVP } from './javascript/pvp.js';
+        import { initPVC } from './javascript/ai.js';
+        
+        document.getElementById('btnPvp').addEventListener('click', initPVP);
+        document.getElementById('btnPvpc').addEventListener('click', initPVC);
+        
+        
+        initPVP();
+    </script>
     </body>
 </html>
