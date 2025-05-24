@@ -7,7 +7,7 @@ body {
     box-sizing: border-box;
 }
 
-#modIgre{
+#modIgre {
     height: 45px;
     position: relative;
 }
@@ -31,28 +31,28 @@ body {
     transform: translateY(-2px);
 }
 
-#btn1p{
-    width: 100px;
-    right: 0px;
-}
-
-#btn2p{
+#btn1p {
     width: 100px;
     right: 0px;
     display: none;
 }
 
-#btnLako{
+#btn2p {
+    width: 100px;
+    right: 0px;
+}
+
+#btnLako {
     width: 75px;
     left: 0px;
 }
 
-#btnTesko{
+#btnTesko {
     width: 75px;
     left: 100px;
 }
 
-#btnPromenaImena{
+#btnPromenaImena {
     width: 175px;
     left: 0px;
     display: none;
