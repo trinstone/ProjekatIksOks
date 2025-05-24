@@ -1,19 +1,18 @@
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f5f5f5;
-    align-items: center;
     width: 500px;
     margin: auto;
-    padding: 20px;
+    padding-top: 20px;
     box-sizing: border-box;
 }
 
-nav{
-    height: 70px;
+#modIgre{
+    height: 45px;
+    position: relative;
 }
 
-nav button {
+#modIgre button {
     padding: 10px;
     background-color: #707070;
     color: white;
@@ -23,22 +22,40 @@ nav button {
     font-size: 20px;
     font-weight: bold;
     box-sizing: border-box;
-    margin: auto;
-    width: 200px;
     height: 45px;
+    position: absolute;
 }
 
-nav button:hover {
+#modIgre button:hover {
     background-color: black;
     transform: translateY(-2px);
 }
 
-#btnPvp{
-    float: left;
+#btn1p{
+    width: 100px;
+    right: 0px;
 }
 
-#btnPvpc{
-    float: right;
+#btn2p{
+    width: 100px;
+    right: 0px;
+    display: none;
+}
+
+#btnLako{
+    width: 75px;
+    left: 0px;
+}
+
+#btnTesko{
+    width: 75px;
+    left: 100px;
+}
+
+#btnPromenaImena{
+    width: 175px;
+    left: 0px;
+    display: none;
 }
 
 #tabla {
@@ -60,11 +77,7 @@ nav button:hover {
     border-color: black;
 }
 
-#tokIgre{
-    margin-top: 25px;
-}
-
-#tokIgre button {
+#btnReset {
     padding: 10px;
     background-color: #707070;
     color: white;
@@ -74,43 +87,24 @@ nav button:hover {
     font-size: 20px;
     font-weight: bold;
     box-sizing: border-box;
-    width: 200px;
+    width: 175px;
     height: 45px;
+    float: left;
+    margin-top: 50px;
 }
 
-#tokIgre button:hover {
+#btnReset:hover {
     background-color: black;
     transform: translateY(-2px);
 }
 
-#btnReset{
-    float: left;
-}
-
-#btnNovaIgra{
-    float: right;
-}
-
-/*#krajIgreOkvir {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    z-index: 100;
-}
-
 #krajIgrePoruka {
-    font-size: 1.5rem;
-    color: #333;
-    margin: 0;
+    font-size: 20px;
+    color: black;
+    text-align: center;
 }
 
+/*
 .poljeTable[data-value="X"] {
     color: #dc3545;
 }

@@ -2,15 +2,18 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="./css/style copy.css">
+        <link rel="stylesheet" href="../css/styleIgra.css">
     </head>
     <body>
-        <nav>
-            <button id="btnPvp">Igrac vs igrac</button>
-            <button id="btnPvpc">Igrac vs kompjuter</button>
-        </nav>
+        <div id="modIgre">
+            <button id="btn1p">1 igrač</button>
+            <button id="btn2p">2 igrača</button>
+            <button id="btnLako">Lako</button>
+            <button id="btnTesko">Teško</button>
+            <button id="btnPromenaImena">Promeni imena</button>
+        </div>
         <div id="krajIgreOkvir">
-            <p id="krajIgrePoruka"></p>
+            <p id="krajIgrePoruka">Cestitamo pobedio si!</p>
         </div>
         <main>
             <div id="tabla">
@@ -26,8 +29,7 @@
             </div>
         </main>
         <div id="tokIgre">
-            <button id="btnReset">Restartuj igru</button>
-            <button id="btnNovaIgra">Nova igra</button>
+            <button id="btnReset">Nova igra</button>
         </div>
         <script type="module">
         import { initPVP } from './javascript/pvp.js';
