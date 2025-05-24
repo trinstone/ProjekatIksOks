@@ -1,5 +1,5 @@
 import {
-    polja, potezX, igraUToku, ProveraPobednika, restartujIgru
+    polja, stanjeIgre, ProveraPobednika, restartujIgru
 } from './main.js';
 
 export function initPVP() {
@@ -15,9 +15,9 @@ function setupEventListeners() {
 }
 
 function KlikPolja() {
-    if (!igraUToku || this.disabled) return;
+    if (!stanjeIgre.igraUToku || this.disabled) return;
 
-    if (potezX) {
+    if (stanjeIgre.potezX) {
         this.textContent = 'X';
         this.style.color = 'green';
     } else {
@@ -28,6 +28,6 @@ function KlikPolja() {
     this.disabled = true;
 
     if (!ProveraPobednika()) {
-        potezX = !potezX;
+        stanjeIgre.potezX = !stanjeIgre.potezX;
     }
 }

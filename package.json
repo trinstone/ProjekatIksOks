@@ -1,0 +1,16 @@
+{
+  "name": "projekatiksoks",
+  "version": "1.0.0",
+  "main": "start_game.js",
+  "scripts": {
+    "start-game": "node start_game.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

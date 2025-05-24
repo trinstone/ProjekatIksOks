@@ -5,10 +5,12 @@ export const btnNovaIgra = document.querySelector('#btnNovaIgra');
 export const krajIgreOkvir = document.querySelector('#krajIgreOkvir');
 export const krajIgrePoruka = document.querySelector('#krajIgrePoruka');
 
-// promenjive u igri
-export let potezX = true;
-export let igraUToku = true;
-export let trenutniFokus = 0; // Za kontrolu tastaturom
+// Deljena promenljiva stanja
+export const stanjeIgre = {
+    potezX: true,
+    igraUToku: true,
+    trenutniFokus: 0
+};
 
 export const pobedaOpcije = [
     [0, 1, 2], [0, 3, 6], [0, 4, 8],
@@ -16,44 +18,44 @@ export const pobedaOpcije = [
     [3, 4, 5], [6, 7, 8]
 ];
 
-// Dodajemo osluškivač za tastaturu
+// Osluškivanje tastature
 document.addEventListener('keydown', (e) => {
-    if (!igraUToku) return;
-    
+    if (!stanjeIgre.igraUToku) return;
+
     switch(e.key) {
         case 'ArrowUp':
             e.preventDefault();
-            if (trenutniFokus >= 3) trenutniFokus -= 3;
+            if (stanjeIgre.trenutniFokus >= 3) stanjeIgre.trenutniFokus -= 3;
             break;
         case 'ArrowDown':
             e.preventDefault();
-            if (trenutniFokus <= 5) trenutniFokus += 3;
+            if (stanjeIgre.trenutniFokus <= 5) stanjeIgre.trenutniFokus += 3;
             break;
         case 'ArrowLeft':
             e.preventDefault();
-            if (trenutniFokus % 3 !== 0) trenutniFokus--;
+            if (stanjeIgre.trenutniFokus % 3 !== 0) stanjeIgre.trenutniFokus--;
             break;
         case 'ArrowRight':
             e.preventDefault();
-            if (trenutniFokus % 3 !== 2) trenutniFokus++;
+            if (stanjeIgre.trenutniFokus % 3 !== 2) stanjeIgre.trenutniFokus++;
             break;
         case 'Enter':
             e.preventDefault();
-            if (polja[trenutniFokus].disabled) return;
-            polja[trenutniFokus].click();
+            if (polja[stanjeIgre.trenutniFokus].disabled) return;
+            polja[stanjeIgre.trenutniFokus].click();
             break;
     }
-    
-    polja[trenutniFokus].focus();
+
+    polja[stanjeIgre.trenutniFokus].focus();
 });
 
 export const PoljaAktivna = () => {
     polja.forEach((polje, index) => {
         polje.disabled = false;
         polje.textContent = '';
-        if (index === 0) polje.focus(); // Postavi fokus na prvo polje
+        if (index === 0) polje.focus();
     });
-    trenutniFokus = 0;
+    stanjeIgre.trenutniFokus = 0;
 };
 
 export const PoljaNeAktivna = () => {
@@ -66,26 +68,24 @@ export const PrikazPobednika = (pobednik) => {
     krajIgrePoruka.textContent = `Čestitamo, pobednik je ${pobednik}`;
     krajIgreOkvir.style.display = 'block';
     PoljaNeAktivna();
-    igraUToku = false;
+    stanjeIgre.igraUToku = false;
 };
 
 export const ProveraPobednika = () => {
-    // Provera pobednika
     for (let opcije of pobedaOpcije) {
         const stanjePolja = opcije.map(index => polja[index].textContent);
         const prvi = stanjePolja[0];
 
-        if(prvi && stanjePolja.every(vrednost => vrednost === prvi)) {
+        if (prvi && stanjePolja.every(vrednost => vrednost === prvi)) {
             PrikazPobednika(prvi);
             return true;
         }
     }
 
-    // Provera izjednačenja
-    if([...polja].every(polje => polje.textContent)) {
+    if ([...polja].every(polje => polje.textContent)) {
         krajIgrePoruka.textContent = 'Izjednačeno je, nema pobednika.';
         krajIgreOkvir.style.display = 'block';
-        igraUToku = false;
+        stanjeIgre.igraUToku = false;
         return true;
     }
 
@@ -93,8 +93,8 @@ export const ProveraPobednika = () => {
 };
 
 export const restartujIgru = () => {
-    potezX = true;
-    igraUToku = true;
+    stanjeIgre.potezX = true;
+    stanjeIgre.igraUToku = true;
     PoljaAktivna();
     krajIgreOkvir.style.display = 'none';
 };
