@@ -4,10 +4,10 @@ const http = require("http-server");
 
 // Folder where index.html is
 const folderToServe = path.join(__dirname);
-const port = 8080;
+const port = 8081;
 
 // Open browser (Windows)
-exec(`start http://localhost:${port}/index.html`);
+exec(`start http://localhost:${port}/html/index.html`);
 
 // Create and start the server
 const server = http.createServer({ root: folderToServe });
