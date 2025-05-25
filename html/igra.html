@@ -1,45 +1,45 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="../css/styleIgra.css">
-    </head>
-    <body>
-        <div id="modIgre">
-            <button id="btn1p">1 igrač</button>
-            <a href="unosImena.html"><button id="btn2p">2 igrača</button></a>
-            <button id="btnLako">Lako</button>
-            <button id="btnTesko">Teško</button>
-            <a href="unosImena.html"><button id="btnPromenaImena">Promeni imena</button></a>
-        </div>
-        <div id="krajIgreOkvir">
-            <p id="krajIgrePoruka">Cestitamo pobedio si!</p>
-        </div>
-        <main>
-            <div id="tabla">
-                <button class="poljeTable"></button>
-                <button class="poljeTable"></button>
-                <button class="poljeTable"></button>
-                <button class="poljeTable"></button>
-                <button class="poljeTable"></button>
-                <button class="poljeTable"></button>
-                <button class="poljeTable"></button>
-                <button class="poljeTable"></button>
-                <button class="poljeTable"></button>
-            </div>
-        </main>
-        <div id="tokIgre">
-            <button id="btnReset">Nova igra</button>
-        </div>
-        <script type="module">
-        import { initPVP } from './javascript/pvp.js';
-        import { initPVC } from './javascript/ai.js';
-        
-        document.getElementById('btnPvp').addEventListener('click', initPVP);
-        document.getElementById('btnPvpc').addEventListener('click', initPVC);
-        
-        
-       
-    </script>
-    </body>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Igra</title>
+  <link rel="stylesheet" href="/css/styleIgra.css" />
+</head>
+<body>
+  <h1>Iks-Oks</h1>
+
+  <div class="mode-buttons">
+    <button id="btn1p">1 Igrač</button>
+    <button id="btn2p">2 Igrača</button>
+    <button id="btnLako" style="display: none;">Lako</button>
+    <button id="btnTesko" style="display: none;">Teško</button>
+  </div>
+
+  <table id="tabla">
+    <tr>
+      <td><button class="poljeTable"></button></td>
+      <td><button class="poljeTable"></button></td>
+      <td><button class="poljeTable"></button></td>
+    </tr>
+    <tr>
+      <td><button class="poljeTable"></button></td>
+      <td><button class="poljeTable"></button></td>
+      <td><button class="poljeTable"></button></td>
+    </tr>
+    <tr>
+      <td><button class="poljeTable"></button></td>
+      <td><button class="poljeTable"></button></td>
+      <td><button class="poljeTable"></button></td>
+    </tr>
+  </table>
+
+  <div id="krajIgreOkvir" style="display: none;">
+    <p id="krajIgrePoruka"></p>
+    <button id="btnReset">Igraj Ponovo</button>
+    <button id="btnNovaIgra">Nova Igra</button>
+  </div>
+
+  <script type="module" src="/javascript/modeSwitch.js"></script>
+</body>
 </html>
