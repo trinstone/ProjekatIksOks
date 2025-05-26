@@ -4,14 +4,11 @@ import {
 
 export function initPVP() {
     restartujIgru();
-    postaviOsluskivace();
+    setupEventListeners();
 }
 
-function postaviOsluskivace() {
+function setupEventListeners() {
     polja.forEach(polje => {
-        polje.disabled = false;
-        polje.textContent = '';
-        polje.style.color = '';
         polje.removeEventListener('click', KlikPolja);
         polje.addEventListener('click', KlikPolja);
     });
@@ -34,4 +31,3 @@ function KlikPolja() {
         stanjeIgre.potezX = !stanjeIgre.potezX;
     }
 }
-
