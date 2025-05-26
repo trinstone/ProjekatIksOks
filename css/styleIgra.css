@@ -41,20 +41,14 @@ body {
     right: 0px;
 }
 
-#btnLako {
-    width: 75px;
-    left: 0px;
-}
-
-#btnTesko {
-    width: 75px;
-    left: 100px;
-}
-
-#btnPromenaImena {
+#btnimena {
     width: 175px;
     left: 0px;
-    display: none;
+}
+
+#btntezina {
+    width: 175px;
+    left: 0px;
 }
 
 #tabla {
@@ -102,24 +96,3 @@ body {
     color: black;
     text-align: center;
 }
-
-/*
-.poljeTable[data-value="X"] {
-    color: #dc3545;
-}
-
-.poljeTable[data-value="O"] {
-    color: #28a745;
-}
-
-@media (max-width: 400px) {
-    #tabla {
-        grid-template-columns: repeat(3, 80px);
-        grid-template-rows: repeat(3, 80px);
-    }
-    
-    .modIgre {
-        flex-direction: column;
-        width: 100%;
-    }
-}*/
