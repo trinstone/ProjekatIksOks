@@ -7,9 +7,28 @@ const btn2p = document.getElementById("btn2p");
 const btnLako = document.getElementById("btnLako");
 const btnTesko = document.getElementById("btnTesko");
 
+
+document.addEventListener("DOMContentLoaded", () => {
+
+const params = new URLSearchParams(window.location.search);
+const choice = params.get("choice");
+if (choice === "option1") {
+  console.log("uga");
+  btnLako.disabled = false;
+  btnTesko.disabled = false;
+} else {
+  console.log("buga");
+  btnLako.disabled = true;
+  btnTesko.disabled = true;
+  btnLako.style.display = "none";
+  btnTesko.style.display = "none";
+  initPVP();
+}
+
+});/*
 btn1p.addEventListener("click", () => {
   if(stanjeIgre.igraUToku){
-    restartujIgru;
+    restartujIgru();
   }
   btn1p.disabled = true;
   btn2p.disabled = false;
@@ -18,9 +37,10 @@ btn1p.addEventListener("click", () => {
   btn1p.style.display = "none";
 });
 
+
 btn2p.addEventListener("click", () => {
   if(stanjeIgre.igraUToku){
-    restartujIgru;
+    restartujIgru();
   }
   btn1p.disabled = false;
   btn2p.disabled = true;
@@ -30,7 +50,7 @@ btn2p.addEventListener("click", () => {
   btnTesko.style.display = "none";
   btn2p.style.display = "none";
   initPVP();
-});
+});*/
 
 btnLako.addEventListener("click", () => {
   initPVC_Lako();
@@ -39,4 +59,3 @@ btnLako.addEventListener("click", () => {
 btnTesko.addEventListener("click", () => {
   initPVC_Tesko();
 });
-
