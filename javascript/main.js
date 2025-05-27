@@ -1,7 +1,6 @@
 // DOM elementi
 export const polja = document.querySelectorAll('.poljeTable');
 export const btnReset = document.querySelector('#btnReset');
-export const btnNovaIgra = document.querySelector('#btnNovaIgra');
 export const krajIgreOkvir = document.querySelector('#krajIgreOkvir');
 export const krajIgrePoruka = document.querySelector('#krajIgrePoruka');
 
@@ -98,6 +97,4 @@ export const restartujIgru = () => {
     PoljaAktivna();
     krajIgreOkvir.style.display = 'none';
 };
-
-btnNovaIgra.addEventListener('click', restartujIgru);
 btnReset.addEventListener('click', restartujIgru);
