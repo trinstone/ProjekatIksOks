@@ -6,6 +6,7 @@ const btn1p = document.getElementById("btn1p");
 const btn2p = document.getElementById("btn2p");
 const btnLako = document.getElementById("btnLako");
 const btnTesko = document.getElementById("btnTesko");
+const btnMeni = document.getElementById("btnMeni");
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -58,4 +59,8 @@ btnLako.addEventListener("click", () => {
 
 btnTesko.addEventListener("click", () => {
   initPVC_Tesko();
+});
+
+btnMeni.addEventListener("click", () =>{
+  window.location.href = 'index.html';
 });
