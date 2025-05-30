@@ -17,7 +17,7 @@ export const pobedaOpcije = [
     [3, 4, 5], [6, 7, 8]
 ];
 
-let igrac1 = "igrac1", igrac2 = "igrac2";
+let igrac1 = "covek", igrac2 = "kompjuter";
 export function PostaviImenaIgraca(igrac1_, igrac2_) {
     igrac1 = igrac1_;
     igrac2 = igrac2_;
