@@ -17,6 +17,12 @@ export const pobedaOpcije = [
     [3, 4, 5], [6, 7, 8]
 ];
 
+let igrac1 = "igrac1", igrac2 = "igrac2";
+export function PostaviImenaIgraca(igrac1_, igrac2_) {
+    igrac1 = igrac1_;
+    igrac2 = igrac2_;
+}
+
 // Osluškivanje tastature
 document.addEventListener('keydown', (e) => {
     if (!stanjeIgre.igraUToku) return;
@@ -74,9 +80,9 @@ export const ProveraPobednika = () => {
     for (let opcije of pobedaOpcije) {
         const stanjePolja = opcije.map(index => polja[index].textContent);
         const prvi = stanjePolja[0];
-
         if (prvi && stanjePolja.every(vrednost => vrednost === prvi)) {
-            PrikazPobednika(prvi);
+            const pobednik = prvi === 'X' ? igrac1 : igrac2;
+            PrikazPobednika(pobednik);
             return true;
         }
     }
@@ -97,4 +103,5 @@ export const restartujIgru = () => {
     PoljaAktivna();
     krajIgreOkvir.style.display = 'none';
 };
+
 btnReset.addEventListener('click', restartujIgru);
