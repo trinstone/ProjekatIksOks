@@ -7,13 +7,17 @@ const btn2p = document.getElementById("btn2p");
 const btnLako = document.getElementById("btnLako");
 const btnTesko = document.getElementById("btnTesko");
 const btnMeni = document.getElementById("btnMeni");
-
+const params = new URLSearchParams(window.location.search);
+export const igrac1 = params.get("imePrvog");
+export const igrac2 = params.get("imeDrugog");
+export const trenutniIgrac = document.getElementById("trenutniIgrac");
 
 document.addEventListener("DOMContentLoaded", () => {
 
 const params = new URLSearchParams(window.location.search);
 const choice = params.get("choice");
 if (choice === "option1") {
+  console.log(igrac1);
   console.log("uga");
   btnLako.disabled = false;
   btnTesko.disabled = false;
@@ -23,7 +27,7 @@ if (choice === "option1") {
   btnTesko.disabled = true;
   btnLako.style.display = "none";
   btnTesko.style.display = "none";
-  initPVP();
+  initPVP(igrac1, igrac2);
 }
 
 });/*

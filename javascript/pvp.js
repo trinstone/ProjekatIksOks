@@ -2,7 +2,10 @@ import {
     polja, stanjeIgre, ProveraPobednika, restartujIgru
 } from './main.js';
 
-export function initPVP() {
+let igrac1, igrac2;
+export function initPVP(igrac1_, igrac2_) {
+    igrac1 = igrac1_;
+    igrac2 = igrac2_;
     restartujIgru();
     setupEventListeners();
 }
@@ -16,13 +19,15 @@ function setupEventListeners() {
 
 function KlikPolja() {
     if (!stanjeIgre.igraUToku || this.disabled) return;
-
     if (stanjeIgre.potezX) {
         this.textContent = 'X';
         this.style.color = 'green';
+        trenutniIgrac.innerText = `${igrac1} je na potezu`;
+        console.log(igrac1);
     } else {
         this.textContent = 'O';
         this.style.color = 'black';
+        trenutniIgrac.innerText = `${igrac2} je na potezu`;
     }
 
     this.disabled = true;
