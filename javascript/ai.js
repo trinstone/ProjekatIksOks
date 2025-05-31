@@ -1,27 +1,29 @@
 import {
-    polja, stanjeIgre, ProveraPobednika, restartujIgru, pobedaOpcije, PostaviImenaIgraca
+    polja, stanjeIgre, ProveraPobednika, restartujIgru,
+    pobedaOpcije, PostaviImenaIgraca
 } from './main.js';
 
-export function initPVC_Lako() {
+export function initPVC_Lako(osluskivaci) {
     restartujIgru();
-    postaviOsluskivace(false); // Easy mode
+    postaviOsluskivace(osluskivaci); // Easy mode
     PostaviImenaIgraca("covek", "kompjuter");
 }
 
-export function initPVC_Tesko() {
+export function initPVC_Tesko(osluskivaci) {
     restartujIgru();
-    postaviOsluskivace(true); // Hard mode
+    postaviOsluskivace(osluskivaci); // Hard mode
     PostaviImenaIgraca("covek", "kompjuter");
 }
 
-
-function postaviOsluskivace(isHard = false) {
+export function postaviOsluskivace(isHard = false) {
     polja.forEach(polje => {
         polje.disabled = false;
         polje.textContent = '';
         polje.style.color = '';
-        polje.removeEventListener('click', (e) => obradiPotezIgraca(e, isHard));
-        polje.addEventListener('click', (e) => obradiPotezIgraca(e, isHard), { once: true });
+
+        const handler = (e) => obradiPotezIgraca(e, isHard);
+        polje.onclick = null; // clear old listener
+        polje.addEventListener('click', handler, { once: true });
     });
 }
 
@@ -69,7 +71,7 @@ function izvrsiAIPotez(isHard) {
 
 function nadjiNajboljiPotez() {
     let najboljiScore = -Infinity;
-    let najboljiPotez = null;
+    let najboljiPolje = null;
 
     polja.forEach((polje, index) => {
         if (polje.textContent === '') {
@@ -78,12 +80,12 @@ function nadjiNajboljiPotez() {
             polje.textContent = '';
             if (score > najboljiScore) {
                 najboljiScore = score;
-                najboljiPotez = polje;
+                najboljiPolje = polje;
             }
         }
     });
 
-    return najboljiPotez;
+    return najboljiPolje;
 }
 
 function minimax(polja, dubina, jeMax) {
@@ -123,3 +125,16 @@ function evaluirajStanje() {
     if ([...polja].every(polje => polje.textContent !== '')) return 0;
     return null;
 }
+
+export const toggleTabelaVidljivost = (vidljivo) => {
+    const tabela = document.querySelector('#tabla'); // Make sure this is the container of all .poljeTable
+    if (!tabela) return;
+
+    tabela.style.display = vidljivo ? 'grid' : 'none';
+};
+
+btnReset.addEventListener('click', () => {
+    toggleTabelaVidljivost(false);
+    restartujIgru();
+    setTimeout(() => toggleTabelaVidljivost(true), 50);
+});

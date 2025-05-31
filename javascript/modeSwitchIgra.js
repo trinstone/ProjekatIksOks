@@ -1,10 +1,10 @@
 import { initPVP } from './pvp.js'; 
-import { initPVC_Lako, initPVC_Tesko } from './ai.js';
-import { stanjeIgre, restartujIgru } from './main.js';
+import { initPVC_Lako, initPVC_Tesko, toggleTabelaVidljivost } from './ai.js';
 
 const btnLako = document.getElementById("btnLako");
 const btnTesko = document.getElementById("btnTesko");
 const btnMeni = document.getElementById("btnMeni");
+export const btnReset = document.querySelector('#btnReset');
 
 // Inputs on gameplay page (if present)
 const imePrvogInput = document.getElementById("imePrvogID");
@@ -42,13 +42,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// AI buttons event listeners
 btnLako.addEventListener("click", () => {
-  initPVC_Lako();
+  toggleTabelaVidljivost(false);
+  initPVC_Lako(false);
+  setTimeout(() => toggleTabelaVidljivost(true), 50);
 });
 
 btnTesko.addEventListener("click", () => {
-  initPVC_Tesko();
+  toggleTabelaVidljivost(false);
+  initPVC_Tesko(true);
+  setTimeout(() => toggleTabelaVidljivost(true), 50);
 });
 
 btnMeni.addEventListener("click", () => {
