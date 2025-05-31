@@ -7,6 +7,7 @@ const btn2p = document.getElementById("btn2p");
 const btnLako = document.getElementById("btnLako");
 const btnTesko = document.getElementById("btnTesko");
 const btnMeni = document.getElementById("btnMeni");
+const divModIgre = document.getElementById("modIgre");
 
 // Get inputs from the form (assuming they exist on this page)
 const imePrvogInput = document.getElementById("imePrvogID");
@@ -41,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btnTesko.disabled = true;
     btnLako.style.display = "none";
     btnTesko.style.display = "none";
+    divModIgre.style.display = "none";
 
     // Enable both inputs if exist
     if (imePrvogInput && imeDrugogInput) {
