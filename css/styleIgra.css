@@ -14,7 +14,7 @@ body {
 
 #modIgre button {
     padding: 10px;
-    background-color: darkslateblue;
+    background-color: #707070;
     color: white;
     border: none;
     border-radius: 5px;
@@ -31,14 +31,24 @@ body {
     transform: translateY(-2px);
 }
 
-#btnLako{
+#btn1p {
     width: 100px;
+    right: 0px;
+}
+
+#btn2p {
+    width: 100px;
+    right: 0px;
+}
+
+#btnimena {
+    width: 175px;
     left: 0px;
 }
 
-#btnTesko{
-    width: 100px;
-    left: 150px;
+#btntezina {
+    width: 175px;
+    left: 0px;
 }
 
 #tabla {
