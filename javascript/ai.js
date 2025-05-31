@@ -5,14 +5,15 @@ import {
 export function initPVC_Lako() {
     restartujIgru();
     postaviOsluskivace(false); // Easy mode
+    PostaviImenaIgraca("covek", "kompjuter");
 }
 
 export function initPVC_Tesko() {
     restartujIgru();
     postaviOsluskivace(true); // Hard mode
+    PostaviImenaIgraca("covek", "kompjuter");
 }
 
-PostaviImenaIgraca("covek", "kompjuter");
 
 function postaviOsluskivace(isHard = false) {
     polja.forEach(polje => {

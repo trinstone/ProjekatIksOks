@@ -12,9 +12,9 @@ export function initPVP(igrac1_, igrac2_) {
     restartujIgru();
     updateTrenutniIgrac();
     setupEventListeners();
+    PostaviImenaIgraca(igrac1, igrac2);
 }
 
-PostaviImenaIgraca(igrac1, igrac2);
 
 function setupEventListeners() {
     polja.forEach(polje => {
