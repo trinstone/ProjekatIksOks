@@ -1,5 +1,5 @@
 import {
-    polja, stanjeIgre, ProveraPobednika, restartujIgru, pobedaOpcije
+    polja, stanjeIgre, ProveraPobednika, restartujIgru, pobedaOpcije, PostaviImenaIgraca
 } from './main.js';
 
 export function initPVC_Lako() {
@@ -11,6 +11,8 @@ export function initPVC_Tesko() {
     restartujIgru();
     postaviOsluskivace(true); // Hard mode
 }
+
+PostaviImenaIgraca("covek", "kompjuter");
 
 function postaviOsluskivace(isHard = false) {
     polja.forEach(polje => {
@@ -120,4 +122,3 @@ function evaluirajStanje() {
     if ([...polja].every(polje => polje.textContent !== '')) return 0;
     return null;
 }
-
