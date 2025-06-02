@@ -60,6 +60,7 @@ h1{
     background-color: white;
     float: left;
     border: solid darkslateblue 2px;
+    font-size: 40px;
 }
 
 .poljeTable:hover {
