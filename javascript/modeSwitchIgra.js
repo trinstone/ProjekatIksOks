@@ -5,6 +5,7 @@ import { initPVC_Lako, initPVC_Tesko, toggleTabelaVidljivost } from './ai.js';
 const btnLako = document.getElementById("btnLako");
 const btnTesko = document.getElementById("btnTesko");
 const btnMeni = document.getElementById("btnMeni");
+const divModIgre = document.getElementById("modIgre");
 export const btnReset = document.querySelector('#btnReset');
 
 // Input polja na stranici sa igrom (ako postoje)
@@ -28,14 +29,17 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("option1 selected");
 
     // Ako je izabran AI mod, dugmad za AI mod se uključuju
+    divModIgre.disabled = false;
     btnLako.disabled = false;
     btnTesko.disabled = false;
   } else {
     console.log("option2 or no choice");
 
     // Sakriva dugmad za AI kada se igra PVP
+    divModIgre.disabled = true;
     btnLako.disabled = true;
     btnTesko.disabled = true;
+    divModIgre.style.display = "none";
     btnLako.style.display = "none";
     btnTesko.style.display = "none";
 
