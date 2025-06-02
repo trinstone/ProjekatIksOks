@@ -15,7 +15,6 @@ export function initPVP(igrac1_, igrac2_) {
     PostaviImenaIgraca(igrac1, igrac2);
 }
 
-
 function setupEventListeners() {
     polja.forEach(polje => {
         polje.removeEventListener('click', klikPolja);
@@ -31,7 +30,6 @@ function updateTrenutniIgrac() {
 function klikPolja() {
     if (!stanjeIgre.igraUToku || this.disabled) return;
 
-    // Set mark and style
     if (stanjeIgre.potezX) {
         this.textContent = 'X';
         this.style.color = 'green';
@@ -41,7 +39,6 @@ function klikPolja() {
     }
     this.disabled = true;
 
-    // Check for winner or switch player
     if (!ProveraPobednika()) {
         stanjeIgre.potezX = !stanjeIgre.potezX;
         updateTrenutniIgrac();

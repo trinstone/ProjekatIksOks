@@ -2,16 +2,17 @@ const { exec } = require("child_process");
 const path = require("path");
 const httpServer = require("http-server");
 
-// Folder where index.html is
+// Folder gde se nalazi index.html
 const folderToServe = path.join(__dirname);
 const port = 8091;
 
-// Open browser (Windows)
+// Otvori browser (Windows)
 exec(`start http://localhost:${port}/html/index.html`);
 
-// Create and start the server
+// Kreiraj i pokreni server
 const server = httpServer.createServer({ root: folderToServe });
 
 server.listen(port, () => {
-  console.log(`Tic Tac Toe launched at http://localhost:${port}`);
+  console.log(`Tic Tac Toe je pokrenut na http://localhost:${port}`);
 });
+
